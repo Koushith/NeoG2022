@@ -42,4 +42,22 @@ showName('Ilya');
  * spread
  */
 
-console.log(Math.max(3, 5, 1)); // 5
+// console.log(Math.max(3, 5, 1)); // 5
+
+let arr = [3, 5, 1];
+// console.log(Math.max(arr)); // nan- because Math.max expects a list of numeric arguments, not a single array:
+// console.log(Math.max(...arr));
+
+// let arr2 = [...arr];
+
+let arr1 = [1, -2, 3, 4];
+let arr2 = [8, 3, -8, 1];
+
+let var2 = [1, ...arr1, 2, ...arr2, 25];
+//console.log(1, ...arr1, 2, ...arr2, 25); // 1, 1, -2, 3 ,4, 2 , 8, 3, -8, 1, 25
+
+// console.log(var2);
+
+let str = 'Hello';
+
+console.log([...str]);
