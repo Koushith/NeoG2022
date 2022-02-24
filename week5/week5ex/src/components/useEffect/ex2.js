@@ -29,3 +29,12 @@ export default function OutPut() {
     </div>
   );
 }
+
+/**
+ * before render... - 0
+ * from useEffect...- 0
+ *
+ * 'from click handler...', 1
+ * before useEffect...- 1
+ * from useEffect...- 1
+ */
