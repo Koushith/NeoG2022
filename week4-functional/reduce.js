@@ -113,14 +113,31 @@ function evenOddCount(arr) {
   return obj;
 }
 
-console.log(evenOddCount(nums));
+// console.log(evenOddCount(nums));
 
-console.log(
-  'evenTedst',
-  nums.filter((num) => num % 2 === 0)
-);
+const reducer = (acc, curr) => {
+  let evenCount = 0;
+  let oddCount = 0;
+  if (curr % 2 == 0) {
+    evenCount++;
+    console.log('even0', evenCount);
 
-console.log(
-  'odd',
-  nums.filter((num) => num % 2 !== 0)
-);
+    acc.even = evenCount;
+  } else {
+    oddCount++;
+    acc.odd = oddCount;
+  }
+  return acc;
+};
+
+console.log(nums.reduce(reducer, obj));
+
+// console.log(
+//   'evenTedst',
+//   nums.filter((num) => num % 2 === 0)
+// );
+
+// console.log(
+//   'odd',
+//   nums.filter((num) => num % 2 !== 0)
+// );
