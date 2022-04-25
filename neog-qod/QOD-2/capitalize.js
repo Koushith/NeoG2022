@@ -7,20 +7,20 @@
  * eg- getSentenceCase('we are neoGrammers') //We Are NeoGrammers
  */
 
-const getUpperCase = (letter) => {
-  const asciiValue = letter.charCodeAt(0);
-  // preserving ascii if current letter is already in uppercase
-  let finalAscii = asciiValue;
+// const getUpperCase = (letter) => {
+//   const asciiValue = letter.charCodeAt(0);
+//   // preserving ascii if current letter is already in uppercase
+//   let finalAscii = asciiValue;
 
-  // if current letter is in smaller case
-  if (asciiValue >= 97 && asciiValue <= 122) {
-    // difference between ascii of small and capital alphabet is 32
-    // Eg: a -> 97 ; A -> 65 | 97 - 65 = 32
-    finalAscii -= 32; //converts to uppercase
-  }
+//   // if current letter is in smaller case
+//   if (asciiValue >= 97 && asciiValue <= 122) {
+//     // difference between ascii of small and capital alphabet is 32
+//     // Eg: a -> 97 ; A -> 65 | 97 - 65 = 32
+//     finalAscii -= 32; //converts to uppercase
+//   }
 
-  return String.fromCharCode(finalAscii);
-};
+//   return String.fromCharCode(finalAscii);
+// };
 
 const getSentenceCase = (sentence) => {
   let result = '';
@@ -28,14 +28,16 @@ const getSentenceCase = (sentence) => {
   for (let index = 0; index < sentence.length; index++) {
     // if we are at first letter, convert to uppercase
     if (index === 0) {
-      result += getUpperCase(sentence[index]);
+      // result += getUpperCase(sentence[index]);
+      result += sentence[index].toUpperCase();
     } else {
       result += sentence[index];
       // if current letter is space then make the first letter of next word
       // as uppercase, and also increment index, such that that letter is not
       //reevaluated
       if (sentence[index] === ' ') {
-        result += getUpperCase(sentence[index + 1]);
+        // result += getUpperCase(sentence[index + 1]);
+        result += sentence[index + 1].toUpperCase();
         index++;
       }
     }
@@ -44,3 +46,4 @@ const getSentenceCase = (sentence) => {
 };
 
 console.log(getSentenceCase('we are neoGrammers'));
+console.log(getSentenceCase('koushith amin'));
